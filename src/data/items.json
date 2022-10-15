@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "idk",
+        "price": 10.99,
+        "imgUrl": "/"
+    },
+    {
+        "id": 2,
+        "name": "idk2",
+        "price": 10.99,
+        "imgUrl": "/"
+    },
+    {
+        "id": 3,
+        "name": "idk3",
+        "price": 10.99,
+        "imgUrl": "/"
+    },
+    {
+        "id": 4,
+        "name": "idk4",
+        "price": 10.99,
+        "imgUrl": "/"
+    }
+]
