@@ -1,10 +1,13 @@
 import storeItems from "../data/items.json"
+import StoreItem from '../components/StoreItem';
 
 const Store = () => {
   return (
     <div className="store__container">
         <ul>{storeItems.map(item => (
-            <li>{JSON.stringify(item)}</li>  
+            <li key={item.id}>
+              <StoreItem {...item}/>
+            </li>  
             ))}
         </ul>
     </div>
