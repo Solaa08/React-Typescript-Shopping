@@ -1,5 +1,6 @@
 import React from 'react'
 import { formatCurrency } from '../utilities/formatCurrency';
+import { useShoppingCart } from '../context/ShoppingCartContext';
 
 type StoreItemProps = {
     id: number
@@ -9,8 +10,13 @@ type StoreItemProps = {
 }
 
 const StoreItem = ({id, name, price, imgUrl}: StoreItemProps) => {
-
-    const quantity = 0
+    const {
+        getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart,
+      } = useShoppingCart()
+      const quantity = getItemQuantity(id)
 
   return (
     <div>
@@ -18,14 +24,14 @@ const StoreItem = ({id, name, price, imgUrl}: StoreItemProps) => {
         <span>{formatCurrency(price)}</span>
         <div>
             {quantity === 0 ? (
-                <button>+ Add to cart</button>
+                <button onClick={() => increaseCartQuantity(id)}>+ Add to cart</button>
             ) : 
             <div>
-                <button>-</button>
+                <button onClick={() => decreaseCartQuantity(id)}>-</button>
                 <span>{quantity} in the cart</span>
-                <button>+</button>
+                <button onClick={() => increaseCartQuantity(id)}>+</button>
                 <div>
-                    <button>Remove</button>
+                    <button onClick={() => removeFromCart(id)}>Remove</button>
                 </div>
             </div> }
         </div>
