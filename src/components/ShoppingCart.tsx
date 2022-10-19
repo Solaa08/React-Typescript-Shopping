@@ -10,13 +10,12 @@ type ShoppingCartProps = {
 
 const ShoppingCart = ({isOpen}: ShoppingCartProps) => {
 
-    const [show, setShow] = useState(false)
 
     const { closeCart } = useShoppingCart()
 
   return (
     <div>
-        <CartModal isOpen={isOpen} hide={closeCart}/>
+        <CartModal isOpen={isOpen}/>
     </div>
   )
 }
